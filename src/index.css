@@ -2,44 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-base: 11, 17, 32;
+  --color-surface: 17, 24, 39;
+  --color-surface2: 30, 41, 59;
+  --color-border: 255, 255, 255;
+  --color-ink: 243, 244, 246;
+  --color-muted: 156, 163, 175;
+}
+
+html.light {
+  --color-base: 246, 247, 250;
+  --color-surface: 255, 255, 255;
+  --color-surface2: 239, 241, 245;
+  --color-border: 10, 14, 20;
+  --color-ink: 11, 14, 20;
+  --color-muted: 75, 85, 99;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply text-ink font-body antialiased transition-colors duration-300;
-  background-color: #080B11;
-}
-html.light body {
-  @apply text-ink-light;
-}
-
-html.light body {
-  background-color: #F6F7FA;
+  @apply bg-base text-ink font-body antialiased transition-colors duration-300;
 }
 
 ::selection {
-  background: rgba(20, 184, 166, 0.35);
+  background: rgba(10, 102, 194, 0.35);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(20, 184, 166, 0.4);
+  background: rgba(10, 102, 194, 0.4);
   border-radius: 8px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(20, 184, 166, 0.7);
+  background: rgba(10, 102, 194, 0.7);
 }
 
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -48,12 +64,14 @@ html.light body {
 }
 
 @layer components {
+
   /* Glassmorphism card base */
   .glass {
-    @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08];
+    @apply bg-white/[0.04] backdrop-blur-xl border border-border/20;
   }
+
   html.light .glass {
-    @apply bg-white/70 border-black/[0.06];
+    @apply bg-white/70 border-border/20;
   }
 
   /* Section heading "eyebrow" label */
@@ -68,37 +86,83 @@ html.light body {
 
   /* Primary gradient CTA button */
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium text-[#06140F]
-      bg-gradient-to-r from-teal-400 to-teal-600
-      shadow-[0_0_0_0_rgba(20,184,166,0.5)] hover:shadow-[0_0_30px_2px_rgba(20,184,166,0.45)]
-      transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium text-white bg-gradient-to-r from-teal-400 to-teal-600 shadow-[0_0_0_0_rgba(10,102,194,0.5)] hover:shadow-[0_0_30px_2px_rgba(10,102,194,0.45)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0;
   }
 
   /* Secondary outline button */
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium
-      border border-white/15 text-ink hover:border-teal-400/60 hover:text-teal-400
-      bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium border border-border text-ink hover:border-teal-400 hover:text-teal-400 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5;
   }
+
   html.light .btn-secondary {
-    @apply border-black/10 text-ink-light hover:border-teal-500/50 hover:text-teal-600 bg-black/[0.02];
+    @apply border-border text-ink hover:border-teal-600 hover:text-teal-600 bg-black/[0.02];
   }
 
   /* Grid background texture */
   .bg-grid {
     background-image:
-      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 44px 44px;
   }
+
   html.light .bg-grid {
     background-image:
-      linear-gradient(rgba(10,14,20,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(10,14,20,0.05) 1px, transparent 1px);
+      linear-gradient(rgba(10, 14, 20, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 14, 20, 0.05) 1px, transparent 1px);
     background-size: 44px 44px;
   }
 
   .text-gradient {
     @apply bg-gradient-to-r from-teal-200 via-teal-400 to-amber-400 bg-clip-text text-transparent;
   }
+}
+
+/* Custom premium animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes float-delayed {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1.05);
+  }
+
+  50% {
+    transform: translateY(20px) scale(1);
+  }
+}
+
+@keyframes gradient-pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
+}
+
+.animate-gradient-pulse {
+  animation: gradient-pulse 4s ease-in-out infinite;
 }

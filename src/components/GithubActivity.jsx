@@ -43,7 +43,7 @@ export default function GithubActivity() {
             rel="noreferrer"
             className="text-sm text-teal-400 hover:text-teal-200 font-mono"
           >
-            @parvej-devloper →
+            @parvejansaridev →
           </a>
         </div>
 

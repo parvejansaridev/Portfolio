@@ -68,8 +68,8 @@ function ApiTerminal() {
         JWT ✓
       </motion.div>
 
-      <div className="rounded-2xl border border-white/10 bg-surface shadow-2xl shadow-teal-500/5 overflow-hidden">
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.02]">
+      <div className="rounded-2xl border border-border bg-surface shadow-2xl shadow-teal-500/5 overflow-hidden">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-black/[0.02] dark:bg-white/[0.02]">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
@@ -179,7 +179,7 @@ export default function Hero() {
                 target={s.href.startsWith('http') ? '_blank' : undefined}
                 rel="noreferrer"
                 aria-label={s.label}
-                className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-muted hover:text-teal-400 hover:border-teal-400/50 hover:-translate-y-1 transition-all duration-300"
+                className="grid h-10 w-10 place-items-center rounded-full border border-border text-muted hover:text-teal-400 hover:border-teal-400/50 hover:-translate-y-1 transition-all duration-300"
               >
                 {s.icon}
               </a>

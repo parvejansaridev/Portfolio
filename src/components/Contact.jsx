@@ -8,7 +8,7 @@ const contactItems = [
   { icon: <FiMail />, label: 'Email', value: personal.email, href: `mailto:${personal.email}` },
   { icon: <FiPhone />, label: 'Phone', value: personal.phone, href: `tel:${personal.phone.replace(/\s/g, '')}` },
   { icon: <FiLinkedin />, label: 'LinkedIn', value: 'mohammad-parvej-ansari', href: personal.linkedin },
-  { icon: <FiGithub />, label: 'GitHub', value: 'parvej-devloper', href: personal.github },
+  { icon: <FiGithub />, label: 'GitHub', value: 'parvejansaridev', href: personal.github },
 ];
 
 export default function Contact() {
@@ -63,7 +63,7 @@ export default function Contact() {
               rel="noreferrer"
               className="glass rounded-2xl p-5 flex items-center gap-4 hover:border-teal-400/30 hover:-translate-y-0.5 transition-all duration-300 group"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/[0.05] text-teal-400 group-hover:bg-teal-400 group-hover:text-[#06140F] transition-colors">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-slate-100 dark:bg-white/[0.05] text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-colors">
                 {item.icon}
               </span>
               <div>
@@ -96,7 +96,7 @@ export default function Contact() {
               value={form.message}
               onChange={handleChange}
               placeholder="Tell me about the role or project..."
-              className="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 text-sm outline-none focus:border-teal-400/50 transition-colors resize-none placeholder:text-muted/60"
+              className="w-full rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-border px-4 py-3 text-sm outline-none focus:border-teal-400/50 transition-colors resize-none placeholder:text-muted/60"
             />
           </div>
           <button type="submit" className="btn-primary w-full sm:w-auto justify-center">
@@ -127,7 +127,7 @@ function Field({ label, name, type = 'text', value, onChange, required }) {
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 text-sm outline-none focus:border-teal-400/50 transition-colors placeholder:text-muted/60"
+        className="w-full rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-border px-4 py-3 text-sm outline-none focus:border-teal-400/50 transition-colors placeholder:text-muted/60"
       />
     </div>
   );

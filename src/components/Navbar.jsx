@@ -56,7 +56,7 @@ export default function Navbar({ theme, toggleTheme }) {
           }}
           className="flex items-center gap-2 font-display font-semibold text-lg"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 text-[#06140F] font-mono font-bold">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 text-white font-mono font-bold">
             PA
           </span>
           <span className="hidden sm:inline">
@@ -94,7 +94,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <button
             onClick={toggleTheme}
             aria-label="Toggle light and dark theme"
-            className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-muted hover:text-teal-400 hover:border-teal-400/40 transition-colors"
+            className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted hover:text-teal-400 hover:border-teal-400/40 transition-colors"
           >
             {theme === 'dark' ? <HiOutlineSun size={17} /> : <HiOutlineMoon size={17} />}
           </button>
@@ -104,7 +104,7 @@ export default function Navbar({ theme, toggleTheme }) {
           </a>
 
           <button
-            className="md:hidden grid h-9 w-9 place-items-center rounded-full border border-white/10 text-ink"
+            className="md:hidden grid h-9 w-9 place-items-center rounded-full border border-border text-ink"
             onClick={() => setOpen((o) => !o)}
             aria-label="Toggle menu"
           >

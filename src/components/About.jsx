@@ -63,7 +63,7 @@ export default function About() {
           {/* Animated Glow effect */}
           <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-teal-400/25 to-amber-400/15 blur-2xl opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
           
-          <div className="group relative rounded-[1.75rem] overflow-hidden border border-white/10 glass p-2 transition-all duration-500 hover:scale-[1.02] hover:border-teal-400/30 hover:shadow-xl hover:shadow-teal-500/10">
+          <div className="group relative rounded-[1.75rem] overflow-hidden border border-border glass p-2 transition-all duration-500 hover:scale-[1.02] hover:border-teal-400/30 hover:shadow-xl hover:shadow-teal-500/10">
             <img
               src={personal.photo}
               alt={personal.name}
@@ -75,7 +75,7 @@ export default function About() {
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-3 -right-3 glass rounded-xl px-4 py-2 font-mono text-xs text-teal-400 shadow-xl border border-white/10 flex items-center gap-2 hover:border-teal-400/30 transition-colors duration-300"
+            className="absolute -bottom-3 -right-3 glass rounded-xl px-4 py-2 font-mono text-xs text-teal-400 shadow-xl border border-border flex items-center gap-2 hover:border-teal-400/30 transition-colors duration-300"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75 animate-ping" />
@@ -103,7 +103,7 @@ export default function About() {
             {stats.map((s) => (
               <div 
                 key={s.label} 
-                className="glass rounded-xl p-4 text-center border border-white/5 hover:border-teal-400/35 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-teal-500/5 transition-all duration-300 cursor-default flex flex-col justify-center min-h-[100px] sm:min-h-[112px]"
+                className="glass rounded-xl p-4 text-center border border-border hover:border-teal-400/35 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-teal-500/5 transition-all duration-300 cursor-default flex flex-col justify-center min-h-[100px] sm:min-h-[112px]"
               >
                 <p className={`font-display font-semibold text-teal-400 font-mono leading-tight ${
                   s.display 

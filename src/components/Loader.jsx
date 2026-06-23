@@ -35,7 +35,7 @@ export default function Loader({ onDone }) {
             <span className="h-2.5 w-2.5 rounded-full bg-teal-400" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
           </div>
-          <div className="rounded-lg border border-white/10 bg-surface p-4 text-left">
+          <div className="rounded-lg border border-border bg-surface p-4 text-left">
             {LINES.slice(0, lineIndex + 1).map((line, i) => (
               <p key={line} className="text-muted">
                 <span className="text-teal-400">$</span>{' '}

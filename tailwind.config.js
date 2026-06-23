@@ -1,3 +1,10 @@
+function withOpacity(variableName, defaultOpacity = '1') {
+  return ({ opacityValue }) => {
+    const opacity = opacityValue !== undefined ? opacityValue : defaultOpacity;
+    return `rgba(var(${variableName}), ${opacity})`;
+  };
+}
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
@@ -6,38 +13,20 @@ export default {
     extend: {
       colors: {
         // Core surfaces
-        base: {
-          DEFAULT: '#080B11', // deepest background (dark mode)
-          light: '#F6F7FA',   // deepest background (light mode)
-        },
-        surface: {
-          DEFAULT: '#10141C',
-          light: '#FFFFFF',
-        },
-        surface2: {
-          DEFAULT: '#161B26',
-          light: '#EFF1F5',
-        },
-        border: {
-          DEFAULT: 'rgba(255,255,255,0.08)',
-          light: 'rgba(10,14,20,0.08)',
-        },
-        ink: {
-          DEFAULT: '#E7EAF2',
-          light: '#0B0E14',
-        },
-        muted: {
-          DEFAULT: '#8B93A7',
-          light: '#5B6273',
-        },
-        // Signature accents — FastAPI-teal + request-amber
+        base: withOpacity('--color-base'),
+        surface: withOpacity('--color-surface'),
+        surface2: withOpacity('--color-surface2'),
+        border: withOpacity('--color-border', '0.08'),
+        ink: withOpacity('--color-ink'),
+        muted: withOpacity('--color-muted'),
+        // Signature accents — #0a66c2 blue + request-amber
         teal: {
-          50: '#E6FBF8',
-          200: '#9BEFE2',
-          400: '#2DD9C4',
-          500: '#14B8A6',
-          600: '#0C9488',
-          700: '#0A776E',
+          50: '#E6F2FC',
+          200: '#92C6F8',
+          400: '#2E90F4',
+          500: '#0A66C2',
+          600: '#0854A0',
+          700: '#064380',
         },
         amber: {
           400: '#FBBF54',
@@ -54,7 +43,7 @@ export default {
         'grid-pattern':
           'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
         'radial-glow':
-          'radial-gradient(circle at 50% 0%, rgba(20,184,166,0.18), transparent 60%)',
+          'radial-gradient(circle at 50% 0%, rgba(10,102,194,0.18), transparent 60%)',
       },
       animation: {
         'float-slow': 'float 8s ease-in-out infinite',
@@ -76,9 +65,9 @@ export default {
           '100%': { transform: 'translateX(-50%)' },
         },
         'pulse-ring': {
-          '0%': { boxShadow: '0 0 0 0 rgba(20,184,166,0.45)' },
-          '70%': { boxShadow: '0 0 0 12px rgba(20,184,166,0)' },
-          '100%': { boxShadow: '0 0 0 0 rgba(20,184,166,0)' },
+          '0%': { boxShadow: '0 0 0 0 rgba(10,102,194,0.45)' },
+          '70%': { boxShadow: '0 0 0 12px rgba(10,102,194,0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(10,102,194,0)' },
         },
       },
     },

@@ -11,27 +11,28 @@ function ProjectCard({ project, index }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -6 }}
-      className={`group relative rounded-2xl border border-white/10 glass overflow-hidden flex flex-col ${
+      className={`group relative rounded-2xl border border-border glass overflow-hidden flex flex-col ${
         project.featured ? 'lg:col-span-2' : ''
       }`}
     >
-      {project.featured && (
-        <span className="absolute top-4 right-4 z-10 font-mono text-[11px] tracking-wide uppercase bg-teal-400/15 text-teal-400 border border-teal-400/30 rounded-full px-3 py-1">
-          Featured · Production
-        </span>
-      )}
-
       {/* Visual header — mock browser frame standing in for a project screenshot */}
       <div className="relative h-44 sm:h-52 bg-gradient-to-br from-surface2 to-surface overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-40" />
-        <div className="absolute inset-x-6 top-6 bottom-6 rounded-xl border border-white/10 bg-base/60 backdrop-blur-sm flex flex-col">
-          <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/10">
-            <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-            <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-            <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+        <div className="absolute inset-x-6 top-6 bottom-6 rounded-xl border border-border bg-base/60 backdrop-blur-sm flex flex-col">
+          <div className="flex items-center justify-between px-3 py-2 border-b border-border">
+            <div className="flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+              <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+              <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+            </div>
+            {project.featured && (
+              <span className="font-mono text-[9px] tracking-wider uppercase bg-teal-400/15 text-teal-400 border border-teal-400/35 rounded px-2 py-0.5">
+                Featured · Production
+              </span>
+            )}
           </div>
           <div className="flex-1 grid place-items-center">
-            <span className="font-display text-2xl sm:text-3xl font-semibold text-white/10 select-none">
+            <span className="font-display text-2xl sm:text-3xl font-semibold text-ink/20 dark:text-ink/10 select-none">
               {project.title.split(' ')[0]}
             </span>
           </div>
@@ -55,14 +56,14 @@ function ProjectCard({ project, index }) {
           {project.tech.map((t) => (
             <span
               key={t}
-              className="font-mono text-[11px] px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/10 text-teal-400"
+              className="font-mono text-[11px] px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-teal-600 dark:text-teal-400"
             >
               {t}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center gap-3 mt-6 pt-5 border-t border-white/10">
+        <div className="flex items-center gap-3 mt-6 pt-5 border-t border-border">
           {project.live && (
             <a
               href={project.live}

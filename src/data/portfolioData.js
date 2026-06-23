@@ -10,7 +10,7 @@ export const personal = {
   email: 'ansarimohammadparvej7@gmail.com',
   phone: '+91 9429410486',
   linkedin: 'https://www.linkedin.com/in/mohammad-parvej-ansari-74179b329/',
-  github: 'https://github.com/parvej-devloper',
+  github: 'https://github.com/parvejansaridev',
   resume: '/assets/Parvej_Ansari_Resume.pdf',
   photo: '/assets/profile.png',
   tagline:
@@ -87,7 +87,7 @@ export const projects = [
     ],
     tech: ['React.js', 'FastAPI', 'PostgreSQL', 'JWT', 'Cloudinary'],
     live: 'https://satan-fits.vercel.app',
-    github: 'https://github.com/parvej-devloper',
+    github: 'https://github.com/parvejansaridev',
     featured: true,
   },
   {
@@ -97,7 +97,7 @@ export const projects = [
     features: ['Product management', 'Authentication', 'Order handling', 'Relational DB design'],
     tech: ['HTML', 'CSS', 'Java', 'PHP', 'MySQL'],
     live: null,
-    github: 'https://github.com/parvej-devloper',
+    github: 'https://github.com/parvejansaridev',
     featured: false,
   },
   {
@@ -107,7 +107,7 @@ export const projects = [
     features: ['Embedded programming', 'Access control logic', 'Hardware-software integration'],
     tech: ['C', 'C++', 'Embedded Systems'],
     live: null,
-    github: 'https://github.com/parvej-devloper',
+    github: 'https://github.com/parvejansaridev',
     featured: false,
   },
 ];

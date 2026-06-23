@@ -31,7 +31,7 @@ export default function Experience() {
           >
             <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 text-[#06140F]">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 text-white">
                   <FiBriefcase size={18} />
                 </span>
                 <div>
@@ -39,7 +39,7 @@ export default function Experience() {
                   <p className="text-teal-400 text-sm font-medium">{exp.company}</p>
                 </div>
               </div>
-              <span className="font-mono text-xs text-muted border border-white/10 rounded-full px-3 py-1.5 whitespace-nowrap">
+              <span className="font-mono text-xs text-muted border border-border rounded-full px-3 py-1.5 whitespace-nowrap">
                 {exp.period}
               </span>
             </div>

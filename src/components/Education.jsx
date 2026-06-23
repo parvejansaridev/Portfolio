@@ -18,7 +18,7 @@ export default function Education() {
       </motion.div>
 
       <div className="relative max-w-2xl mx-auto">
-        <div className="absolute left-[18px] sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-teal-400/60 via-white/10 to-transparent sm:-translate-x-1/2" />
+        <div className="absolute left-[18px] sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-teal-400/60 via-border to-transparent sm:-translate-x-1/2" />
 
         <div className="space-y-8">
           {education.map((edu, i) => (
@@ -36,7 +36,7 @@ export default function Education() {
                 {i % 2 === 0 && <TimelineCard edu={edu} />}
               </div>
 
-              <span className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-teal-400 to-teal-600 text-[#06140F] shadow-lg shadow-teal-500/20 z-10">
+              <span className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-teal-400 to-teal-600 text-white shadow-lg shadow-teal-500/20 z-10">
                 <FiBookOpen size={15} />
               </span>
 
@@ -61,7 +61,7 @@ function TimelineCard({ edu }) {
       <p className="font-mono text-xs text-teal-400">{edu.period}</p>
       <h3 className="font-display font-semibold mt-1.5">{edu.degree}</h3>
       <p className="text-muted text-sm mt-1">{edu.school}</p>
-      <p className="text-amber-400 text-sm font-medium mt-1.5">{edu.detail}</p>
+      <p className="text-amber-600 dark:text-amber-400 text-sm font-medium mt-1.5">{edu.detail}</p>
     </div>
   );
 }
