@@ -139,11 +139,30 @@ export const education = [
   },
 ];
 
+export const certifications = [
+  {
+    title: 'Django Framework',
+    issuer: 'Python & Web Development Certification',
+    date: '2025',
+    description: 'Comprehensive study of Django development including MVC/MVT architecture, Django ORM, authentication system, middleware, admin interface, and REST API development.',
+    skills: ['Django ORM', 'MVT Architecture', 'REST APIs', 'User Authentication'],
+  },
+  {
+    title: 'Python Libraries for ML, Data Visualization and Data Analysis',
+    issuer: 'Data Science & Machine Learning Certification',
+    date: '2025',
+    description: 'Practical training on using core Python libraries for data preprocessing, visualization, statistics, and machine learning models.',
+    skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn'],
+  },
+];
+
 export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Education', href: '#education' },
+  { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ];
+
